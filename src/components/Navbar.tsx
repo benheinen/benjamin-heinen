@@ -11,6 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
+
 export default function Navbar() {
   // Allows for a dynamic effect of the Navbar
   // Makes a shadow appear once moved from original Y pos
@@ -30,7 +31,7 @@ export default function Navbar() {
     <Flex
       bgColor={navbar ? "gray.300" : "gray.300"}
       as="nav"
-      p="10px"
+      paddingInline={200}
       alignItems="center"
       gap="10px"
       boxShadow={navbar ? "md" : "none"}
