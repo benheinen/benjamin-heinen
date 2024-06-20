@@ -1,6 +1,5 @@
 import {
   Box,
-  Heading,
   SimpleGrid,
   GridItem,
   Card,
@@ -8,7 +7,6 @@ import {
   CardBody,
   List,
   ListItem,
-  VStack,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 
@@ -82,7 +80,7 @@ function Skills() {
         title={"Technical Skills"}
         subtitle={"The technologies behind my projects"}
       ></CategoryHeading>
-      <SimpleGrid columns={3} paddingInline={10} gap={10}>
+      <SimpleGrid columns={3} gap={10}>
         {skillsData.map(function (skill, index) {
           return (
             <SkillCard key={index} title={skill.title} items={skill.items} />
