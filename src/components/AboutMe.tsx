@@ -31,7 +31,7 @@ export default function AboutMe() {
           ></Image>
         </GridItem>
         <GridItem area={"text"} paddingInline={10}>
-          <VStack spacing={5} mb={5}>
+          <VStack spacing={5} mb={5} color={"gray.600"}>
             <Text>
               Hello! My Name is Ben and I'm an aspiring software engineer
               studying computer science at the University of Minnesota, Twin
