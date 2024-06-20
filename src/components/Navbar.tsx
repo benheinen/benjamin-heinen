@@ -29,8 +29,9 @@ export default function Navbar() {
 
   return (
     <Flex
-      bgColor={navbar ? "gray.300" : "gray.300"}
+      bgColor={navbar ? "gray.200" : "gray.300"}
       as="nav"
+      paddingBlock={5}
       paddingInline={200}
       alignItems="center"
       gap="10px"
@@ -83,21 +84,13 @@ export default function Navbar() {
       </Grid>
       <Spacer></Spacer>
       <HStack spacing={5} mr={5}>
-        <Link
-          href="https://github.com/benheinen"
-          isExternal
-          colorScheme={"black"}
-        >
+        <Link href="https://github.com/benheinen" isExternal>
           <HStack>
             <Image boxSize={4} src="/github.png" />
             <Text>/benheinen</Text>
           </HStack>
         </Link>
-        <Link
-          href="https://www.linkedin.com/in/ben-heinen/"
-          isExternal
-          colorScheme={"black"}
-        >
+        <Link href="https://www.linkedin.com/in/ben-heinen/" isExternal>
           <HStack>
             <Image boxSize={4} src="/linkedin.png" />
             <Text>/in/ben-heinen</Text>
