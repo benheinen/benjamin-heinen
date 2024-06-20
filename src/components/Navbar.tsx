@@ -6,6 +6,9 @@ import {
   Heading,
   Grid,
   GridItem,
+  Image,
+  Link,
+  Text,
 } from "@chakra-ui/react";
 import { useState } from "react";
 export default function Navbar() {
@@ -31,23 +34,31 @@ export default function Navbar() {
       alignItems="center"
       gap="10px"
       boxShadow={navbar ? "md" : "none"}
-      fontWeight="bold"
       width="100%"
       pos="sticky"
       top={0}
       zIndex={10}
     >
       <Grid
-        templateAreas={`"header header header"
-                  "proj updates contact"`}
+        templateAreas={`"icon header header header"
+                  "icon proj updates contact"`}
       >
+        <GridItem area="icon" mr={5}>
+          <Image
+            src="/benjamin-heinen-pfp.jpg"
+            boxSize={20}
+            borderRadius="full"
+            objectFit="cover"
+            alt="Benjamin Heinen"
+          ></Image>
+        </GridItem>
         <GridItem area={"header"} color={"gray.700"}>
           <Heading size="xl">Benjamin Heinen</Heading>
         </GridItem>
         <GridItem area={"proj"}>
           <Button
             variant="link"
-            _hover={{ color: "white", textDecor: "underline" }}
+            _hover={{ color: "gray.700", textDecor: "underline" }}
           >
             Projects
           </Button>
@@ -55,7 +66,7 @@ export default function Navbar() {
         <GridItem area={"updates"}>
           <Button
             variant="link"
-            _hover={{ color: "white", textDecor: "underline" }}
+            _hover={{ color: "gray.700", textDecor: "underline" }}
           >
             Updates
           </Button>
@@ -63,14 +74,35 @@ export default function Navbar() {
         <GridItem area={"contact"}>
           <Button
             variant="link"
-            _hover={{ color: "white", textDecor: "underline" }}
+            _hover={{ color: "gray.700", textDecor: "underline" }}
           >
             Contact
           </Button>
         </GridItem>
       </Grid>
       <Spacer></Spacer>
-      <HStack spacing="20px"></HStack>
+      <HStack spacing={5} mr={5}>
+        <Link
+          href="https://github.com/benheinen"
+          isExternal
+          colorScheme={"black"}
+        >
+          <HStack>
+            <Image boxSize={4} src="/github.png" />
+            <Text>/benheinen</Text>
+          </HStack>
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/ben-heinen/"
+          isExternal
+          colorScheme={"black"}
+        >
+          <HStack>
+            <Image boxSize={4} src="/linkedin.png" />
+            <Text>/in/ben-heinen</Text>
+          </HStack>
+        </Link>
+      </HStack>
     </Flex>
   );
 }
