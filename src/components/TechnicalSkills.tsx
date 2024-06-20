@@ -10,11 +10,11 @@ import {
   ListItem,
   VStack,
 } from "@chakra-ui/react";
+import CategoryHeading from "./CategoryHeading";
 
-type SkillItem = string;
 type SkillCategory = {
   title: string;
-  items: SkillItem[][];
+  items: string[][];
 };
 
 const skillsData: SkillCategory[] = [
@@ -43,9 +43,10 @@ const skillsData: SkillCategory[] = [
 
 interface SkillCardProps {
   title: string;
-  items: SkillItem[][];
+  items: string[][];
 }
 
+// In the future, I might decide to make this component seperate from this one.
 function SkillCard(props: SkillCardProps) {
   const { title, items } = props;
   return (
@@ -77,12 +78,10 @@ function SkillCard(props: SkillCardProps) {
 function Skills() {
   return (
     <Box marginBlock={50}>
-      <VStack>
-        <Heading size={"xl"}>Technical Skills</Heading>
-        <Heading size={"sm"} color={"gray.500"} mb={5}>
-          The technologies behind my projects
-        </Heading>
-      </VStack>
+      <CategoryHeading
+        title={"Technical Skills"}
+        subtitle={"The technologies behind my projects"}
+      ></CategoryHeading>
       <SimpleGrid columns={3} paddingInline={10} gap={10}>
         {skillsData.map(function (skill, index) {
           return (
