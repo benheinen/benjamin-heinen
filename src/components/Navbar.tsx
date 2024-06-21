@@ -29,7 +29,7 @@ export default function Navbar() {
 
   return (
     <Flex
-      bgColor={navbar ? "gray.200" : "gray.300"}
+      bgColor={navbar ? "gray.100" : "gray.200"}
       as="nav"
       paddingInline={250}
       paddingBlock={5}

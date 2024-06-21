@@ -17,7 +17,7 @@ import Connect from "../components/Connect";
 
 export default function Home() {
   return (
-    <Box bg="gray.300" paddingInline={250}>
+    <Box bg="gray.200" paddingInline={250}>
       <Grid paddingBlock={150} templateAreas={`"greeting image"`}>
         <GridItem area={"greeting"}>
           <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
