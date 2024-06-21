@@ -24,7 +24,7 @@ const skillsData: SkillCategory[] = [
     ],
   },
   {
-    title: "Frameworks/Libraries",
+    title: "Frameworks & Libraries",
     items: [
       ["NumPy", "PyGame", "ChakraUI"],
       ["React", "Node.js"],
@@ -44,12 +44,18 @@ interface SkillCardProps {
   items: string[][];
 }
 
-// In the future, I might decide to make this component seperate from this one.
+// In the future, I might decide to export this component to seperate it from this file.
 function SkillCard(props: SkillCardProps) {
   const { title, items } = props;
   return (
     <GridItem>
-      <Card borderRadius={"2xl"} shadow={"base"} color={"gray.800"} p={5}>
+      <Card
+        borderRadius={"2xl"}
+        shadow={"base"}
+        color={"gray.800"}
+        bg={"gray.200"}
+        p={5}
+      >
         <CardHeader fontSize={"xl"} fontWeight={"bold"}>
           {title}
         </CardHeader>
