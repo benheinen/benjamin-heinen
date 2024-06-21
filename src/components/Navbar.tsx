@@ -42,7 +42,6 @@ export default function Navbar() {
       <Grid
         templateAreas={`"icon header header header header "
                   "icon home about proj contact"`}
-        gap={2}
       >
         <GridItem area="icon" mr={5}>
           <Image

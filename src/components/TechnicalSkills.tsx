@@ -1,5 +1,4 @@
 import {
-  Box,
   SimpleGrid,
   GridItem,
   Card,
@@ -7,6 +6,7 @@ import {
   CardBody,
   List,
   ListItem,
+  VStack,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 
@@ -48,13 +48,7 @@ interface SkillCardProps {
 function SkillCard({ title, items }: SkillCardProps) {
   return (
     <GridItem>
-      <Card
-        borderRadius={"2xl"}
-        shadow={"Base"}
-        color={"gray.800"}
-        bg={"gray.100"}
-        p={5}
-      >
+      <Card borderRadius={"2xl"} color={"gray.800"} bg={"gray.100"} p={5}>
         <CardHeader fontSize={"xl"} fontWeight={"bold"}>
           {title}
         </CardHeader>
@@ -80,7 +74,7 @@ function SkillCard({ title, items }: SkillCardProps) {
 
 function Skills() {
   return (
-    <Box marginBlock={50}>
+    <VStack>
       <CategoryHeading
         title={"Technical Skills"}
         subtitle={"The technologies behind my projects"}
@@ -92,7 +86,7 @@ function Skills() {
           );
         })}
       </SimpleGrid>
-    </Box>
+    </VStack>
   );
 }
 

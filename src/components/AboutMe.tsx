@@ -9,7 +9,7 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
-import { DownloadIcon } from "@chakra-ui/icons";
+import { StarIcon } from "@chakra-ui/icons";
 
 export default function AboutMe() {
   return (
@@ -27,7 +27,9 @@ export default function AboutMe() {
         <GridItem area={"image"}>
           <Image
             borderRadius={"xl"}
-            src="https://via.placeholder.com/300"
+            boxSize={300}
+            boxShadow={"xs"}
+            src="/UCARD_PHOTO.jpeg"
           ></Image>
         </GridItem>
         <GridItem area={"text"} paddingInline={10}>
@@ -50,13 +52,15 @@ export default function AboutMe() {
           </VStack>
           <HStack>
             <Spacer />
-            <Button
-              leftIcon={<DownloadIcon />}
-              size={"md"}
-              colorScheme={"orange"}
-            >
-              Resume
-            </Button>
+            <a href="/resume.pdf" target={"_blank"}>
+              <Button
+                leftIcon={<StarIcon />}
+                size={"md"}
+                colorScheme={"orange"}
+              >
+                Resume
+              </Button>
+            </a>
           </HStack>
         </GridItem>
       </Grid>

@@ -31,10 +31,14 @@ export default function Footer() {
           <Image boxSize="20px" src="github-white.png" alt="GitHub Logo" />
         </Box>
         <Box bg="gray.800" p={1} borderRadius={"lg"}>
-          <Image boxSize="20px" src="instagram-white.png" alt="GitHub Logo" />
+          <Image
+            boxSize="20px"
+            src="instagram-white.png"
+            alt="Instagram Logo"
+          />
         </Box>
         <Box bg="gray.800" p={1} borderRadius={"lg"}>
-          <Image boxSize="20px" src="linkedin-white.png" alt="GitHub Logo" />
+          <Image boxSize="20px" src="linkedin-white.png" alt="Linkedin Logo" />
         </Box>
       </HStack>
       <Text fontSize={"sm"}>Developed by Ben Heinen</Text>

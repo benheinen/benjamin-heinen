@@ -1,4 +1,12 @@
-import { Card, Heading, VStack, Image, Button, Box } from "@chakra-ui/react";
+import {
+  Card,
+  Heading,
+  VStack,
+  Image,
+  Button,
+  Link,
+  HStack,
+} from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
@@ -6,31 +14,32 @@ interface Props {
   image: string;
   title: string;
   username: string;
+  link: string;
 }
 
-function ConnectCard({ title, image, username }: Props) {
+function ConnectCard({ title, image, username, link }: Props) {
   return (
     <Card
       borderRadius={"2xl"}
-      shadow={"Base"}
       color={"gray.800"}
       bg={"gray.100"}
       w={300}
-      h={125}
-      paddingInline={10}
+      padding={10}
       justifyContent="center"
     >
       <VStack align={"flex-start"}>
         <Image boxSize={5} src={image}></Image>
         <Heading size={"sm"}>{title}</Heading>
-        <Button
-          color={"gray.800"}
-          variant={"link"}
-          rightIcon={<ChevronRightIcon />}
-          fontWeight={"none"}
-        >
-          {username}
-        </Button>
+        <Link href={link} isExternal>
+          <Button
+            color={"gray.800"}
+            variant={"link"}
+            rightIcon={<ChevronRightIcon />}
+            fontWeight={"none"}
+          >
+            {username}
+          </Button>
+        </Link>
       </VStack>
     </Card>
   );
@@ -38,28 +47,33 @@ function ConnectCard({ title, image, username }: Props) {
 
 export default function Connect() {
   return (
-    <Box alignItems={"flex-start"}>
+    <VStack>
       <CategoryHeading
         title={"Connect"}
         subtitle={"Any questions? Please get in contact!"}
       />
-      <VStack>
+      <HStack>
         <ConnectCard
-          image={"linkedin.png"}
+          image={"/linkedin.png"}
           title={"LinkedIn"}
           username={"ben-heinen"}
+          link={"https://www.linkedin.com/in/ben-heinen/"}
         />
         <ConnectCard
-          image={"linkedin.png"}
+          image={"/email.png"}
           title={"Email"}
           username={"benbuis24@gmail.com"}
+          link={
+            "https://mail.google.com/mail/?view=cm&fs=1&to=benbuis24@gmail.com"
+          }
         />
         <ConnectCard
-          image={"github.png"}
+          image={"/github.png"}
           title={"Github"}
           username={"benheinen"}
+          link={"https://github.com/benheinen"}
         />
-      </VStack>
-    </Box>
+      </HStack>
+    </VStack>
   );
 }
