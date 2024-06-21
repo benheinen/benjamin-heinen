@@ -34,15 +34,14 @@ export default function Navbar() {
       paddingInline={250}
       paddingBlock={5}
       alignItems={"center"}
-      gap={10}
       boxShadow={navbar ? "lg" : "none"}
       pos={"sticky"}
       top={0}
       zIndex={10}
     >
       <Grid
-        templateAreas={`"icon header header header header header"
-                  "icon home about proj updates contact"`}
+        templateAreas={`"icon header header header header "
+                  "icon home about proj contact"`}
         gap={2}
       >
         <GridItem area="icon" mr={5}>
@@ -81,20 +80,12 @@ export default function Navbar() {
             Projects
           </Button>
         </GridItem>
-        <GridItem area={"updates"}>
-          <Button
-            variant="link"
-            _hover={{ color: "gray.700", textDecor: "underline" }}
-          >
-            Updates
-          </Button>
-        </GridItem>
         <GridItem area={"contact"}>
           <Button
             variant="link"
             _hover={{ color: "gray.700", textDecor: "underline" }}
           >
-            Contact
+            Connect
           </Button>
         </GridItem>
       </Grid>

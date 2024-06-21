@@ -22,7 +22,6 @@ export default function Footer() {
         <HStack gap={5}>
           <Button variant={"link"}>Home</Button>
           <Button variant={"link"}>About</Button>
-          <Button variant={"link"}>Projects</Button>
           <Button variant={"link"}>Updates</Button>
           <Button variant={"link"}>Contact</Button>
         </HStack>
