@@ -1,4 +1,4 @@
-import { ArrowDownIcon, EmailIcon } from "@chakra-ui/icons";
+import { ArrowDownIcon } from "@chakra-ui/icons";
 import {
   Box,
   Heading,
@@ -30,11 +30,7 @@ export default function Home() {
           </Text>
           <HStack>
             <VStack>
-              <Button
-                size={"lg"}
-                colorScheme={"orange"}
-                leftIcon={<EmailIcon />}
-              >
+              <Button size={"lg"} colorScheme={"orange"}>
                 Connect
               </Button>
               <Button rightIcon={<ArrowDownIcon />} variant="link" mt={20}>
@@ -45,10 +41,12 @@ export default function Home() {
         </GridItem>
         <GridItem area="image"></GridItem>
       </Grid>
-      <AboutMe />
-      <TechnicalSkills />
-      <Projects />
-      <Connect />
+      <VStack gap={175}>
+        <AboutMe />
+        <TechnicalSkills />
+        <Projects />
+        <Connect />
+      </VStack>
     </Box>
   );
 }
