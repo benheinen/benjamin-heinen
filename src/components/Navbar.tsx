@@ -41,8 +41,9 @@ export default function Navbar() {
       zIndex={10}
     >
       <Grid
-        templateAreas={`"icon header header header"
-                  "icon proj updates contact"`}
+        templateAreas={`"icon header header header header header"
+                  "icon home about proj updates contact"`}
+        gap={2}
       >
         <GridItem area="icon" mr={5}>
           <Image
@@ -55,6 +56,22 @@ export default function Navbar() {
         </GridItem>
         <GridItem area={"header"} color={"gray.700"}>
           <Heading size="xl">Benjamin Heinen</Heading>
+        </GridItem>
+        <GridItem area={"home"}>
+          <Button
+            variant="link"
+            _hover={{ color: "gray.700", textDecor: "underline" }}
+          >
+            Home
+          </Button>
+        </GridItem>
+        <GridItem area={"about"}>
+          <Button
+            variant="link"
+            _hover={{ color: "gray.700", textDecor: "underline" }}
+          >
+            About
+          </Button>
         </GridItem>
         <GridItem area={"proj"}>
           <Button

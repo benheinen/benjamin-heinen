@@ -20,6 +20,7 @@ export default function Footer() {
           Benjamin Heinen
         </Heading>
         <HStack gap={5}>
+          <Button variant={"link"}>Home</Button>
           <Button variant={"link"}>About</Button>
           <Button variant={"link"}>Projects</Button>
           <Button variant={"link"}>Updates</Button>
