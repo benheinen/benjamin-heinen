@@ -45,15 +45,14 @@ interface SkillCardProps {
 }
 
 // In the future, I might decide to export this component to seperate it from this file.
-function SkillCard(props: SkillCardProps) {
-  const { title, items } = props;
+function SkillCard({ title, items }: SkillCardProps) {
   return (
     <GridItem>
       <Card
         borderRadius={"2xl"}
-        shadow={"base"}
+        shadow={"Base"}
         color={"gray.800"}
-        bg={"gray.200"}
+        bg={"gray.100"}
         p={5}
       >
         <CardHeader fontSize={"xl"} fontWeight={"bold"}>
