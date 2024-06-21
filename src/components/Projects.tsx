@@ -1,10 +1,71 @@
+import {
+  Card,
+  VStack,
+  Image,
+  Button,
+  HStack,
+  Heading,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
+
+interface Props {
+  title: string;
+  image: string;
+  link: string;
+}
+
+function ProjectsCard({ title, image, link }: Props) {
+  return (
+    <Card bg={"gray.100"} borderRadius={"2xl"} p={5} w={400}>
+      <VStack>
+        <Image
+          borderRadius={"2xl"}
+          outline={"1px solid"}
+          outlineColor={"gray.200"}
+          objectFit={"cover"}
+          src={image}
+        ></Image>
+        <Heading fontSize={"xl"} fontWeight={"bold"}>
+          {title}
+        </Heading>
+        <HStack>
+          <a href={link} target={"_blank"}>
+            <Button
+              color={"gray.600"}
+              fontWeight={"none"}
+              variant={"link"}
+              gap={2}
+            >
+              <Image boxSize="15px" src="github.png" alt="GitHub Logo" />
+              Github
+            </Button>
+          </a>
+        </HStack>
+      </VStack>
+    </Card>
+  );
+}
 
 export default function Projects() {
   return (
-    <CategoryHeading
-      title={"Projects"}
-      subtitle={"My recent ideas come to life!"}
-    />
+    <VStack>
+      <CategoryHeading
+        title={"Projects"}
+        subtitle={"My recent ideas come to life!"}
+      />
+      <SimpleGrid columns={2} gap={5}>
+        <ProjectsCard
+          title={"Data Structures Repo"}
+          image={"data-structures.png"}
+          link={"https://github.com/benheinen/data-structures"}
+        />
+        <ProjectsCard
+          title={"Raycasting Engine"}
+          image={"raycasting-engine.png"}
+          link={"https://github.com/benheinen/python-raycasting-engine"}
+        />
+      </SimpleGrid>
+    </VStack>
   );
 }
