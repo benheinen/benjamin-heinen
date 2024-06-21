@@ -41,7 +41,7 @@ export default function Home() {
         </GridItem>
         <GridItem area="image"></GridItem>
       </Grid>
-      <VStack gap={175}>
+      <VStack gap={175} mb={175}>
         <AboutMe />
         <TechnicalSkills />
         <Projects />
