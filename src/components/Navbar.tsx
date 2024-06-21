@@ -18,7 +18,7 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   const changeBackground = () => {
-    if (window.scrollY >= 10) {
+    if (window.scrollY >= 150) {
       setNavbar(true);
     } else {
       setNavbar(false);
@@ -31,7 +31,7 @@ export default function Navbar() {
     <Flex
       bgColor={navbar ? "gray.200" : "gray.300"}
       as="nav"
-      paddingInline={200}
+      paddingInline={250}
       paddingBlock={5}
       alignItems={"center"}
       gap={10}
