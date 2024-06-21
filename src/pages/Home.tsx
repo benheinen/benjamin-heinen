@@ -18,11 +18,7 @@ import Contact from "../components/Contact";
 export default function Home() {
   return (
     <Box bg="gray.300" paddingInline={250}>
-      <Grid
-        paddingTop={200}
-        paddingBottom={125}
-        templateAreas={`"greeting image"`}
-      >
+      <Grid paddingBlock={150} templateAreas={`"greeting image"`}>
         <GridItem area={"greeting"}>
           <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
           <Heading size={"lg"}>Aspiring Software Engineer</Heading>
