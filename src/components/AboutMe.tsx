@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   GridItem,
   Text,
@@ -10,10 +9,11 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
+import { DownloadIcon } from "@chakra-ui/icons";
 
 export default function AboutMe() {
   return (
-    <Box>
+    <VStack>
       <Grid
         templateAreas={`"heading heading"
             "image text"`}
@@ -33,7 +33,7 @@ export default function AboutMe() {
         <GridItem area={"text"} paddingInline={10}>
           <VStack spacing={5} mb={5} color={"gray.600"}>
             <Text>
-              Hello! My Name is Ben and I'm an aspiring software engineer
+              Hello! My name is Ben and I'm an aspiring software engineer
               studying computer science at the University of Minnesota, Twin
               Cities.
             </Text>
@@ -49,13 +49,17 @@ export default function AboutMe() {
             </Text>
           </VStack>
           <HStack>
-            <Spacer></Spacer>
-            <Button size={"md"} colorScheme={"orange"}>
+            <Spacer />
+            <Button
+              leftIcon={<DownloadIcon />}
+              size={"md"}
+              colorScheme={"orange"}
+            >
               Resume
             </Button>
           </HStack>
         </GridItem>
       </Grid>
-    </Box>
+    </VStack>
   );
 }
