@@ -13,7 +13,7 @@ import {
 import TechnicalSkills from "../components/TechnicalSkills";
 import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
-import Contact from "../components/Contact";
+import Connect from "../components/Connect";
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
                 colorScheme={"orange"}
                 leftIcon={<EmailIcon />}
               >
-                Contact
+                Connect
               </Button>
               <Button rightIcon={<ArrowDownIcon />} variant="link" mt={20}>
                 Scroll
@@ -48,7 +48,7 @@ export default function Home() {
       <AboutMe />
       <TechnicalSkills />
       <Projects />
-      <Contact />
+      <Connect />
     </Box>
   );
 }
