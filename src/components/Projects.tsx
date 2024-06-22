@@ -5,7 +5,8 @@ import {
   Button,
   HStack,
   Heading,
-  SimpleGrid,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 
@@ -50,22 +51,37 @@ function ProjectsCard({ title, image, link }: Props) {
 export default function Projects() {
   return (
     <VStack>
-      <CategoryHeading
-        title={"Projects"}
-        subtitle={"My recent ideas come to life!"}
-      />
-      <SimpleGrid columns={2} gap={5}>
-        <ProjectsCard
-          title={"Data Structures Repo"}
-          image={"data-structures.png"}
-          link={"https://github.com/benheinen/data-structures"}
-        />
-        <ProjectsCard
-          title={"Raycasting Engine"}
-          image={"raycasting-engine.png"}
-          link={"https://github.com/benheinen/python-raycasting-engine"}
-        />
-      </SimpleGrid>
+      <Grid
+        templateAreas={{
+          sm: `"heading"
+        "card1"
+        "card2"`,
+          lg: `"heading heading"
+        "card1 card2"`,
+        }}
+        gap={5}
+      >
+        <GridItem area={"heading"}>
+          <CategoryHeading
+            title={"Projects"}
+            subtitle={"My recent ideas come to life!"}
+          />
+        </GridItem>
+        <GridItem area={"card1"}>
+          <ProjectsCard
+            title={"Data Structures Repo"}
+            image={"data-structures.png"}
+            link={"https://github.com/benheinen/data-structures"}
+          />
+        </GridItem>
+        <GridItem area={"card2"}>
+          <ProjectsCard
+            title={"Raycasting Engine"}
+            image={"raycasting-engine.png"}
+            link={"https://github.com/benheinen/python-raycasting-engine"}
+          />
+        </GridItem>
+      </Grid>
     </VStack>
   );
 }
