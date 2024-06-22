@@ -1,19 +1,19 @@
-import { Button, Slide } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { Box, Button, SlideFade } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 export default function BackToTopButton() {
-  const [backToTopButton, setBackToTopButton] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Shows the scroll button once Y pos is over 100
+  // Shows the scroll button once Y pos is over 150
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY >= 150) {
-        setBackToTopButton(true);
+        setIsVisible(true);
       } else {
-        setBackToTopButton(false);
+        setIsVisible(false);
       }
     });
-  }, []);
+  });
 
   const scrollUp = () => {
     window.scrollTo({
@@ -23,20 +23,12 @@ export default function BackToTopButton() {
   };
 
   return (
-    <div>
-      {backToTopButton && (
-        <Slide direction="bottom">
-          <Button
-            pos={"fixed"}
-            bottom={50}
-            right={50}
-            colorScheme={"orange"}
-            onClick={scrollUp}
-          >
-            ^
-          </Button>
-        </Slide>
-      )}
-    </div>
+    <Box position="fixed" bottom={10} right={10}>
+      <SlideFade in={isVisible}>
+        <Button colorScheme="orange" onClick={scrollUp}>
+          ^
+        </Button>
+      </SlideFade>
+    </Box>
   );
 }
