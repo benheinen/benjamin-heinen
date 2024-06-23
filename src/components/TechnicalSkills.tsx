@@ -1,91 +1,66 @@
 import {
-  SimpleGrid,
   GridItem,
   Card,
   CardHeader,
   CardBody,
-  List,
-  ListItem,
   VStack,
+  Grid,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
-
-type SkillCategory = {
+interface Props {
   title: string;
-  items: string[][];
-};
-
-const skillsData: SkillCategory[] = [
-  {
-    title: "Languages",
-    items: [
-      ["C", "HTML/CSS", "Java"],
-      ["TypeScript", "Python", "SwiftUI"],
-    ],
-  },
-  {
-    title: "Frameworks & Libraries",
-    items: [
-      ["NumPy", "PyGame", "ChakraUI"],
-      ["React", "Node.js"],
-    ],
-  },
-  {
-    title: "Tools",
-    items: [
-      ["Git", "Unix", "Docker"],
-      ["Firebase", "MySQL"],
-    ],
-  },
-];
-
-interface SkillCardProps {
-  title: string;
-  items: string[][];
+  items: string;
 }
 
 // In the future, I might decide to export this component to seperate it from this file.
-function SkillCard({ title, items }: SkillCardProps) {
+function SkillCard({ title, items }: Props) {
   return (
-    <GridItem>
-      <Card borderRadius={"2xl"} color={"gray.800"} bg={"gray.100"} p={5}>
-        <CardHeader fontSize={"xl"} fontWeight={"bold"}>
-          {title}
-        </CardHeader>
-        <CardBody>
-          <SimpleGrid columns={2}>
-            {items.map(function (list, index) {
-              return (
-                <GridItem key={index}>
-                  <List>
-                    {list.map(function (item, idx) {
-                      return <ListItem key={idx}>{item}</ListItem>;
-                    })}
-                  </List>
-                </GridItem>
-              );
-            })}
-          </SimpleGrid>
-        </CardBody>
-      </Card>
-    </GridItem>
+    <Card w={300} borderRadius={"2xl"} bg={"gray.100"}>
+      <CardHeader fontWeight={"bold"}>{title}</CardHeader>
+      <CardBody>{items}</CardBody>
+    </Card>
   );
 }
 
 function Skills() {
   return (
     <VStack>
-      <CategoryHeading
-        title={"Technical Skills"}
-        subtitle={"The technologies behind my projects"}
-      ></CategoryHeading>
-      <SimpleGrid columns={3} gap={10}>
-        {skillsData.map(function (skill, index) {
-          return (
-            <SkillCard key={index} title={skill.title} items={skill.items} />
-          );
-        })}
-      </SimpleGrid>
+      <Grid
+        gridTemplateAreas={{
+          lg: `"heading heading heading"
+        "card1 card2 card3"`,
+          sm: `"heading"
+        "card1"
+        "card2"
+        "card3"`,
+        }}
+        gap={5}
+      >
+        <GridItem area={"heading"}>
+          <CategoryHeading
+            title={"Technical Skills"}
+            subtitle={"The technologies behind my projects"}
+          ></CategoryHeading>
+        </GridItem>
+        <GridItem area={"card1"}>
+          <SkillCard
+            title={"Languages"}
+            items={"C, HTML/CSS, Java, TypeScript, Python, SwiftUI"}
+          />
+        </GridItem>
+        <GridItem area={"card2"}>
+          <SkillCard
+            title={"Frameworks & Libraries"}
+            items={"React, ChakraUI, Node.js, NumPy, PyGame"}
+          />
+        </GridItem>
+        <GridItem area={"card3"}>
+          <SkillCard
+            title={"Tools"}
+            items={"MySQL, Git, Docker, Unix, Firebase"}
+          />
+        </GridItem>
+      </Grid>
     </VStack>
   );
 }
