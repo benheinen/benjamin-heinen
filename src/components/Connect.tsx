@@ -5,7 +5,8 @@ import {
   Image,
   Button,
   Link,
-  HStack,
+  Grid,
+  GridItem,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -48,32 +49,50 @@ function ConnectCard({ title, image, username, link }: Props) {
 export default function Connect() {
   return (
     <VStack>
-      <CategoryHeading
-        title={"Connect"}
-        subtitle={"Any questions? Please get in contact!"}
-      />
-      <HStack>
-        <ConnectCard
-          image={"/linkedin.png"}
-          title={"LinkedIn"}
-          username={"ben-heinen"}
-          link={"https://www.linkedin.com/in/ben-heinen/"}
-        />
-        <ConnectCard
-          image={"/email.png"}
-          title={"Email"}
-          username={"benbuis24@gmail.com"}
-          link={
-            "https://mail.google.com/mail/?view=cm&fs=1&to=benbuis24@gmail.com"
-          }
-        />
-        <ConnectCard
-          image={"/github.png"}
-          title={"Github"}
-          username={"benheinen"}
-          link={"https://github.com/benheinen"}
-        />
-      </HStack>
+      <Grid
+        gridTemplateAreas={{
+          lg: `"heading heading heading"
+        "linkedin email github"`,
+          sm: `"heading"
+        "linkedin"
+        "email"
+        "github"`,
+        }}
+        gap={5}
+      >
+        <GridItem area={"heading"}>
+          <CategoryHeading
+            title={"Connect"}
+            subtitle={"Any questions? Please get in contact!"}
+          />
+        </GridItem>
+        <GridItem area={"linkedin"}>
+          <ConnectCard
+            image={"/linkedin.png"}
+            title={"LinkedIn"}
+            username={"ben-heinen"}
+            link={"https://www.linkedin.com/in/ben-heinen/"}
+          />
+        </GridItem>
+        <GridItem area={"email"}>
+          <ConnectCard
+            image={"/email.png"}
+            title={"Email"}
+            username={"benbuis24@gmail.com"}
+            link={
+              "https://mail.google.com/mail/?view=cm&fs=1&to=benbuis24@gmail.com"
+            }
+          />
+        </GridItem>
+        <GridItem area={"github"}>
+          <ConnectCard
+            image={"/github.png"}
+            title={"Github"}
+            username={"benheinen"}
+            link={"https://github.com/benheinen"}
+          />
+        </GridItem>
+      </Grid>
     </VStack>
   );
 }
