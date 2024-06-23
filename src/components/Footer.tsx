@@ -28,17 +28,27 @@ export default function Footer() {
       </VStack>
       <HStack>
         <Box bg="gray.800" p={1} borderRadius={"lg"}>
-          <Image boxSize="20px" src="github-white.png" alt="GitHub Logo" />
+          <a href="https://github.com/benheinen" target="_blank">
+            <Image boxSize="20px" src="github-white.png" alt="GitHub Logo" />
+          </a>
         </Box>
         <Box bg="gray.800" p={1} borderRadius={"lg"}>
-          <Image
-            boxSize="20px"
-            src="instagram-white.png"
-            alt="Instagram Logo"
-          />
+          <a href="https://www.instagram.com/sduperbenn/" target="_blank">
+            <Image
+              boxSize="20px"
+              src="instagram-white.png"
+              alt="Instagram Logo"
+            />
+          </a>
         </Box>
         <Box bg="gray.800" p={1} borderRadius={"lg"}>
-          <Image boxSize="20px" src="linkedin-white.png" alt="Linkedin Logo" />
+          <a href="https://www.linkedin.com/in/ben-heinen/" target="_blank">
+            <Image
+              boxSize="20px"
+              src="linkedin-white.png"
+              alt="Linkedin Logo"
+            />
+          </a>
         </Box>
       </HStack>
       <Text fontSize={"sm"}>Developed by Ben Heinen</Text>
