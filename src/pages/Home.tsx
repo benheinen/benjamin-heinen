@@ -20,8 +20,15 @@ export default function Home() {
   return (
     <Box bg="gray.200" paddingInline={250}>
       <BackToTopButton></BackToTopButton>
-      <Grid paddingBlock={150} templateAreas={`"greeting image"`}>
-        <GridItem area={"greeting"}>
+      <Grid
+        paddingBlock={150}
+        templateAreas={{
+          lg: `"greeting image"`,
+          sm: `"greeting" 
+        "image"`,
+        }}
+      >
+        <GridItem area={"greeting"} w={500}>
           <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
           <Heading size={"lg"}>Aspiring Software Engineer</Heading>
           <Text marginBlock={5} fontSize={"lg"}>

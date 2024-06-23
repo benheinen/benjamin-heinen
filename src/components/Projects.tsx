@@ -55,9 +55,11 @@ export default function Projects() {
         templateAreas={{
           sm: `"heading"
         "card1"
-        "card2"`,
+        "card2"
+        "card3"`,
           lg: `"heading heading"
-        "card1 card2"`,
+        "card1 card2"
+        "card3 card2"`,
         }}
         gap={5}
       >
@@ -79,6 +81,13 @@ export default function Projects() {
             title={"Raycasting Engine"}
             image={"raycasting-engine.png"}
             link={"https://github.com/benheinen/python-raycasting-engine"}
+          />
+        </GridItem>
+        <GridItem area={"card3"}>
+          <ProjectsCard
+            title={"Wordle Clone"}
+            image={"wordle-clone.png"}
+            link={"https://github.com/benheinen/bens-wordle"}
           />
         </GridItem>
       </Grid>
