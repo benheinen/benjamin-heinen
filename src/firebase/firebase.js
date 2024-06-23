@@ -3,7 +3,8 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBBDk2MbJcDzseACreytGp-yQUXnU_OTSw",
+  // eslint-disable-next-line no-undef
+  apiKey: process.env.API_KEY,
   authDomain: "benjamin-heinen.firebaseapp.com",
   projectId: "benjamin-heinen",
   storageBucket: "benjamin-heinen.appspot.com",
