@@ -38,21 +38,23 @@ export default function AboutMe() {
         <GridItem area={"text1"}>
           <Text w={300}>
             Hello! My name is Ben and I'm an aspiring software engineer studying
-            computer science at the University of Minnesota, Twin Cities.
+            computer science at the
+            <strong> University of Minnesota, Twin Cities</strong>
           </Text>
         </GridItem>
         <GridItem area={"text2"}>
           <Text w={300}>
             I am increasingly inspired by the innovative technologies being
             developed around us at all times. My goal is to contribute to this
-            innovation with practical solutions.
+            innovation with using my projects and future career.
           </Text>
         </GridItem>
         <GridItem area={"text3"}>
           <Text w={300}>
-            In addition to programming, I enjoy competing in Ironman races and
-            Ultramarathons. I find it important to maintain a healthy lifestyle
-            so I can provide my best work.
+            In addition to programming, I enjoy competing in
+            <strong> Ironman races</strong> and <strong>Ultramarathons</strong>.
+            I find it important to maintain a healthy lifestyle so I can provide
+            my best work.
           </Text>
         </GridItem>
         <GridItem area={"resume"}>
