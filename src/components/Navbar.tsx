@@ -40,16 +40,22 @@ export default function Navbar() {
       zIndex={10}
     >
       <Grid
-        templateAreas={`"icon header header header header "
-                  "icon home about proj contact"`}
+        templateAreas={{
+          lg: `"icon header header header header "
+                  "icon home about proj contact"`,
+          sm: `"header header header header"
+          "home about proj contact"`,
+        }}
       >
         <GridItem area="icon" mr={5}>
           <Image
             src="/benjamin-heinen-pfp.jpg"
-            boxSize={20}
+            w={20}
+            minWidth={20}
             borderRadius="full"
             objectFit="cover"
             alt="Benjamin Heinen"
+            display={{ base: "none", lg: "block" }}
           ></Image>
         </GridItem>
         <GridItem area={"header"} color={"gray.700"}>
@@ -90,13 +96,21 @@ export default function Navbar() {
       </Grid>
       <Spacer></Spacer>
       <HStack spacing={5} mr={5}>
-        <Link href="https://github.com/benheinen" isExternal>
+        <Link
+          href="https://github.com/benheinen"
+          isExternal
+          display={{ base: "none", lg: "block" }}
+        >
           <HStack>
             <Image boxSize={4} src="/github.png" />
             <Text>/benheinen</Text>
           </HStack>
         </Link>
-        <Link href="https://www.linkedin.com/in/ben-heinen/" isExternal>
+        <Link
+          href="https://www.linkedin.com/in/ben-heinen/"
+          isExternal
+          display={{ base: "none", lg: "block" }}
+        >
           <HStack>
             <Image boxSize={4} src="/linkedin.png" />
             <Text>/in/ben-heinen</Text>
