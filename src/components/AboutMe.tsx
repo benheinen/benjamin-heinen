@@ -1,22 +1,25 @@
-import {
-  Button,
-  GridItem,
-  Text,
-  Image,
-  Grid,
-  VStack,
-  HStack,
-  Spacer,
-} from "@chakra-ui/react";
+import { Button, GridItem, Text, Image, Grid, VStack } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 import { StarIcon } from "@chakra-ui/icons";
 
 export default function AboutMe() {
   return (
-    <VStack>
+    <VStack alignContent={"center"}>
       <Grid
-        templateAreas={`"heading heading"
-            "image text"`}
+        templateAreas={{
+          lg: `"heading heading"
+            "image text1"
+            "image text2"
+            "image text3"
+            "resume text3"`,
+          sm: `"heading"
+            "image"
+            "text1"
+            "text2"
+            "text3"
+            "resume"`,
+        }}
+        gap={5}
       >
         <GridItem area={"heading"}>
           <CategoryHeading
@@ -27,41 +30,37 @@ export default function AboutMe() {
         <GridItem area={"image"}>
           <Image
             borderRadius={"xl"}
-            boxSize={300}
             boxShadow={"xs"}
+            w={300}
             src="/UCARD_PHOTO.jpeg"
           ></Image>
         </GridItem>
-        <GridItem area={"text"} paddingInline={10}>
-          <VStack spacing={5} mb={5} color={"gray.600"}>
-            <Text>
-              Hello! My name is Ben and I'm an aspiring software engineer
-              studying computer science at the University of Minnesota, Twin
-              Cities.
-            </Text>
-            <Text>
-              I am increasingly inspired by the innovative technologies being
-              developed around us at all times. My goal is to contribute to this
-              innovation with practical solutions.
-            </Text>
-            <Text>
-              In addition to programming, I enjoy competing in Ironman races and
-              Ultramarathons. I find it important to maintain a healthy
-              lifestyle so I can provide my best work.
-            </Text>
-          </VStack>
-          <HStack>
-            <Spacer />
-            <a href="/resume.pdf" target={"_blank"}>
-              <Button
-                leftIcon={<StarIcon />}
-                size={"md"}
-                colorScheme={"orange"}
-              >
-                Resume
-              </Button>
-            </a>
-          </HStack>
+        <GridItem area={"text1"}>
+          <Text w={300}>
+            Hello! My name is Ben and I'm an aspiring software engineer studying
+            computer science at the University of Minnesota, Twin Cities.
+          </Text>
+        </GridItem>
+        <GridItem area={"text2"}>
+          <Text w={300}>
+            I am increasingly inspired by the innovative technologies being
+            developed around us at all times. My goal is to contribute to this
+            innovation with practical solutions.
+          </Text>
+        </GridItem>
+        <GridItem area={"text3"}>
+          <Text w={300}>
+            In addition to programming, I enjoy competing in Ironman races and
+            Ultramarathons. I find it important to maintain a healthy lifestyle
+            so I can provide my best work.
+          </Text>
+        </GridItem>
+        <GridItem area={"resume"}>
+          <a href="/resume.pdf" target={"_blank"}>
+            <Button leftIcon={<StarIcon />} w={300} colorScheme={"orange"}>
+              Resume
+            </Button>
+          </a>
         </GridItem>
       </Grid>
     </VStack>
