@@ -23,7 +23,7 @@ export default function BackToTopButton() {
   };
 
   return (
-    <Box position="fixed" bottom={10} right={10}>
+    <Box position="fixed" bottom={10} right={10} zIndex={10}>
       <SlideFade in={isVisible}>
         <Button colorScheme="orange" onClick={scrollUp}>
           ^

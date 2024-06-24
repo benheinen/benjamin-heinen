@@ -54,7 +54,7 @@ const Connect = forwardRef((props, ref) => {
         gridTemplateAreas={{
           lg: `"heading heading heading"
                   "linkedin email github"`,
-          sm: `"heading"
+          base: `"heading"
                  "linkedin"
                  "email"
                  "github"`,

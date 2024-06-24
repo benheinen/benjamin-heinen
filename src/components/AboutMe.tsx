@@ -12,7 +12,7 @@ import { StarIcon } from "@chakra-ui/icons";
 
 const AboutMe = forwardRef((props, ref) => {
   return (
-    <VStack alignContent={"center"} ref={ref} {...props}>
+    <VStack ref={ref} {...props}>
       <Grid
         templateAreas={{
           lg: `"heading heading"
@@ -20,12 +20,12 @@ const AboutMe = forwardRef((props, ref) => {
                 "image text2"
                 "image text3"
                 "resume text3"`,
-          sm: `"heading"
-                "image"
-                "text1"
-                "text2"
-                "text3"
-                "resume"`,
+          base: `"heading"
+          "image"
+          "text1"
+          "text2"
+          "text3"
+          "resume"`,
         }}
         gap={5}
       >

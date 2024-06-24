@@ -41,9 +41,7 @@ export default function Navbar() {
     <Flex
       bgColor={navbar ? "white" : "gray.200"}
       as="nav"
-      paddingInline={250}
       paddingBlock={5}
-      alignItems={"center"}
       boxShadow={navbar ? "lg" : "none"}
       pos={"sticky"}
       top={0}
@@ -53,9 +51,11 @@ export default function Navbar() {
         templateAreas={{
           lg: `"icon header header header header "
                   "icon home about proj contact"`,
-          sm: `"header header header header"
+          base: `"header header header header"
           "home about proj contact"`,
         }}
+        justifyContent={{ base: "center" }}
+        w={{ base: "100vh" }}
       >
         <GridItem area="icon" mr={5}>
           <Image
@@ -109,22 +109,14 @@ export default function Navbar() {
         </GridItem>
       </Grid>
       <Spacer></Spacer>
-      <HStack spacing={5} mr={5}>
-        <Link
-          href="https://github.com/benheinen"
-          isExternal
-          display={{ base: "none", lg: "block" }}
-        >
+      <HStack spacing={5} mr={5} display={{ base: "none", lg: "flex" }}>
+        <Link href="https://github.com/benheinen" isExternal>
           <HStack>
             <Image boxSize={4} src="/github.png" />
             <Text>/benheinen</Text>
           </HStack>
         </Link>
-        <Link
-          href="https://www.linkedin.com/in/ben-heinen/"
-          isExternal
-          display={{ base: "none", lg: "block" }}
-        >
+        <Link href="https://www.linkedin.com/in/ben-heinen/" isExternal>
           <HStack>
             <Image boxSize={4} src="/linkedin.png" />
             <Text>/in/ben-heinen</Text>

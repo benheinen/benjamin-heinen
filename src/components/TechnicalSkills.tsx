@@ -30,7 +30,7 @@ const Skills = forwardRef((props, ref) => {
         gridTemplateAreas={{
           lg: `"heading heading heading"
         "card1 card2 card3"`,
-          sm: `"heading"
+          base: `"heading"
         "card1"
         "card2"
         "card3"`,

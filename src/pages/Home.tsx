@@ -33,48 +33,47 @@ export default function Home() {
   };
 
   return (
-    <Box bg="gray.200" paddingInline={250}>
+    <Box bg="gray.200">
       <BackToTopButton></BackToTopButton>
-      <Grid
-        paddingBlock={150}
-        templateAreas={{
-          lg: `"greeting image"`,
-          sm: `"greeting" 
-        "image"`,
-        }}
-      >
-        <GridItem id={"greeting"} area={"greeting"} w={500}>
-          <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
-          <Heading size={"lg"}>Aspiring Software Engineer</Heading>
-          <Text marginBlock={5} fontSize={"lg"}>
-            Currently pursuing a Computer Science degree <br />
-            <Text as="em" fontWeight={"bold"}>
-              @ the University of Minnesota - Twin Cities
-            </Text>
-          </Text>
-          <HStack>
-            <VStack>
-              <Button
-                size={"lg"}
-                colorScheme={"orange"}
-                onClick={scrollToConnect}
-              >
-                Connect
-              </Button>
-              <Button
-                rightIcon={<ArrowDownIcon />}
-                variant="link"
-                mt={20}
-                onClick={scrollToAbout}
-              >
-                Scroll
-              </Button>
-            </VStack>
-          </HStack>
-        </GridItem>
-        <GridItem area="image"></GridItem>
-      </Grid>
       <VStack gap={190} paddingBottom={125}>
+        <Grid
+          paddingBlock={150}
+          templateAreas={{
+            lg: `"greeting"`,
+            sm: `"greeting"`,
+            xs: `"greeting"`,
+          }}
+        >
+          <GridItem id={"greeting"} area={"greeting"} w={"100%"}>
+            <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
+            <Heading size={"lg"}>Aspiring Software Engineer</Heading>
+            <Text marginBlock={5} fontSize={"lg"}>
+              Currently pursuing a Computer Science degree <br />
+              <Text as="em" fontWeight={"bold"}>
+                @ the University of Minnesota - Twin Cities
+              </Text>
+            </Text>
+            <HStack>
+              <VStack>
+                <Button
+                  size={"lg"}
+                  colorScheme={"orange"}
+                  onClick={scrollToConnect}
+                >
+                  Connect
+                </Button>
+                <Button
+                  rightIcon={<ArrowDownIcon />}
+                  variant="link"
+                  mt={20}
+                  onClick={scrollToAbout}
+                >
+                  Scroll
+                </Button>
+              </VStack>
+            </HStack>
+          </GridItem>
+        </Grid>
         <AboutMe id={"about-me"} ref={aboutMeRef} />
         <TechnicalSkills id={"skills"} ref={technicalSkillsRef} />
         <Projects id={"projects"} ref={projectsRef} />

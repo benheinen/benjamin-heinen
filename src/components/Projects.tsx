@@ -54,13 +54,13 @@ const Projects = forwardRef((props, ref) => {
     <VStack ref={ref} {...props}>
       <Grid
         templateAreas={{
-          sm: `"heading"
+          lg: `"heading heading"
+          "card1 card2"
+          "card3 card2"`,
+          base: `"heading"
         "card1"
         "card2"
         "card3"`,
-          lg: `"heading heading"
-        "card1 card2"
-        "card3 card2"`,
         }}
         gap={5}
       >
