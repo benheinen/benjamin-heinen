@@ -5,6 +5,7 @@ import {
   CardBody,
   VStack,
   Grid,
+  forwardRef,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 interface Props {
@@ -22,9 +23,9 @@ function SkillCard({ title, items }: Props) {
   );
 }
 
-function Skills() {
+const Skills = forwardRef((props, ref) => {
   return (
-    <VStack>
+    <VStack ref={ref} {...props}>
       <Grid
         gridTemplateAreas={{
           lg: `"heading heading heading"
@@ -63,6 +64,6 @@ function Skills() {
       </Grid>
     </VStack>
   );
-}
+});
 
 export default Skills;

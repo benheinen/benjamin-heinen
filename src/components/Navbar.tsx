@@ -27,6 +27,16 @@ export default function Navbar() {
 
   window.addEventListener("scroll", changeBackground);
 
+  // Used for site navigation
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <Flex
       bgColor={navbar ? "white" : "gray.200"}
@@ -65,6 +75,7 @@ export default function Navbar() {
           <Button
             variant="link"
             _hover={{ color: "gray.700", textDecor: "underline" }}
+            onClick={() => scrollToSection("greeting")}
           >
             Home
           </Button>
@@ -73,6 +84,7 @@ export default function Navbar() {
           <Button
             variant="link"
             _hover={{ color: "gray.700", textDecor: "underline" }}
+            onClick={() => scrollToSection("about-me")}
           >
             About
           </Button>
@@ -81,6 +93,7 @@ export default function Navbar() {
           <Button
             variant="link"
             _hover={{ color: "gray.700", textDecor: "underline" }}
+            onClick={() => scrollToSection("projects")}
           >
             Projects
           </Button>
@@ -89,6 +102,7 @@ export default function Navbar() {
           <Button
             variant="link"
             _hover={{ color: "gray.700", textDecor: "underline" }}
+            onClick={() => scrollToSection("connect")}
           >
             Connect
           </Button>

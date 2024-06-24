@@ -9,6 +9,14 @@ import {
 } from "@chakra-ui/react";
 
 export default function Footer() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <VStack
       borderTop="0.5px"
@@ -20,10 +28,18 @@ export default function Footer() {
           Benjamin Heinen
         </Heading>
         <HStack gap={5}>
-          <Button variant={"link"}>Home</Button>
-          <Button variant={"link"}>About</Button>
-          <Button variant={"link"}>Updates</Button>
-          <Button variant={"link"}>Contact</Button>
+          <Button onClick={() => scrollToSection("greeting")} variant={"link"}>
+            Home
+          </Button>
+          <Button onClick={() => scrollToSection("about-me")} variant={"link"}>
+            About
+          </Button>
+          <Button onClick={() => scrollToSection("projects")} variant={"link"}>
+            Projects
+          </Button>
+          <Button onClick={() => scrollToSection("connect")} variant={"link"}>
+            Connect
+          </Button>
         </HStack>
       </VStack>
       <HStack>

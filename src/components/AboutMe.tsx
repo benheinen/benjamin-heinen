@@ -1,23 +1,31 @@
-import { Button, GridItem, Text, Image, Grid, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  GridItem,
+  Text,
+  Image,
+  Grid,
+  VStack,
+  forwardRef,
+} from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 import { StarIcon } from "@chakra-ui/icons";
 
-export default function AboutMe() {
+const AboutMe = forwardRef((props, ref) => {
   return (
-    <VStack alignContent={"center"}>
+    <VStack alignContent={"center"} ref={ref} {...props}>
       <Grid
         templateAreas={{
           lg: `"heading heading"
-            "image text1"
-            "image text2"
-            "image text3"
-            "resume text3"`,
+                "image text1"
+                "image text2"
+                "image text3"
+                "resume text3"`,
           sm: `"heading"
-            "image"
-            "text1"
-            "text2"
-            "text3"
-            "resume"`,
+                "image"
+                "text1"
+                "text2"
+                "text3"
+                "resume"`,
         }}
         gap={5}
       >
@@ -25,7 +33,7 @@ export default function AboutMe() {
           <CategoryHeading
             title={"About Me"}
             subtitle={"I like to make things"}
-          ></CategoryHeading>
+          />
         </GridItem>
         <GridItem area={"image"}>
           <Image
@@ -33,7 +41,7 @@ export default function AboutMe() {
             boxShadow={"xs"}
             w={300}
             src="/UCARD_PHOTO.jpeg"
-          ></Image>
+          />
         </GridItem>
         <GridItem area={"text1"}>
           <Text w={300}>
@@ -67,4 +75,6 @@ export default function AboutMe() {
       </Grid>
     </VStack>
   );
-}
+});
+
+export default AboutMe;

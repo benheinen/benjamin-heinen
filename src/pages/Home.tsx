@@ -15,8 +15,23 @@ import AboutMe from "../components/AboutMe";
 import Projects from "../components/Projects";
 import Connect from "../components/Connect";
 import BackToTopButton from "../components/BackToTopButton";
+import { useRef } from "react";
 
 export default function Home() {
+  // Used for site navigation. Scroll between components.
+  const aboutMeRef = useRef<null | HTMLDivElement>(null);
+  const connectRef = useRef<null | HTMLDivElement>(null);
+  const technicalSkillsRef = useRef<null | HTMLDivElement>(null);
+  const projectsRef = useRef<null | HTMLDivElement>(null);
+
+  const scrollToAbout = () => {
+    aboutMeRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToConnect = () => {
+    connectRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <Box bg="gray.200" paddingInline={250}>
       <BackToTopButton></BackToTopButton>
@@ -28,7 +43,7 @@ export default function Home() {
         "image"`,
         }}
       >
-        <GridItem area={"greeting"} w={500}>
+        <GridItem id={"greeting"} area={"greeting"} w={500}>
           <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
           <Heading size={"lg"}>Aspiring Software Engineer</Heading>
           <Text marginBlock={5} fontSize={"lg"}>
@@ -39,10 +54,19 @@ export default function Home() {
           </Text>
           <HStack>
             <VStack>
-              <Button size={"lg"} colorScheme={"orange"}>
+              <Button
+                size={"lg"}
+                colorScheme={"orange"}
+                onClick={scrollToConnect}
+              >
                 Connect
               </Button>
-              <Button rightIcon={<ArrowDownIcon />} variant="link" mt={20}>
+              <Button
+                rightIcon={<ArrowDownIcon />}
+                variant="link"
+                mt={20}
+                onClick={scrollToAbout}
+              >
                 Scroll
               </Button>
             </VStack>
@@ -51,10 +75,10 @@ export default function Home() {
         <GridItem area="image"></GridItem>
       </Grid>
       <VStack gap={190} paddingBottom={125}>
-        <AboutMe />
-        <TechnicalSkills />
-        <Projects />
-        <Connect />
+        <AboutMe id={"about-me"} ref={aboutMeRef} />
+        <TechnicalSkills id={"skills"} ref={technicalSkillsRef} />
+        <Projects id={"projects"} ref={projectsRef} />
+        <Connect id={"connect"} ref={connectRef} />
       </VStack>
     </Box>
   );

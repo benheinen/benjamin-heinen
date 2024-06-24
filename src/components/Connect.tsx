@@ -7,6 +7,7 @@ import {
   Link,
   Grid,
   GridItem,
+  forwardRef,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 import { ChevronRightIcon } from "@chakra-ui/icons";
@@ -46,17 +47,17 @@ function ConnectCard({ title, image, username, link }: Props) {
   );
 }
 
-export default function Connect() {
+const Connect = forwardRef((props, ref) => {
   return (
-    <VStack>
+    <VStack ref={ref} {...props}>
       <Grid
         gridTemplateAreas={{
           lg: `"heading heading heading"
-        "linkedin email github"`,
+                  "linkedin email github"`,
           sm: `"heading"
-        "linkedin"
-        "email"
-        "github"`,
+                 "linkedin"
+                 "email"
+                 "github"`,
         }}
         gap={5}
       >
@@ -95,4 +96,6 @@ export default function Connect() {
       </Grid>
     </VStack>
   );
-}
+});
+
+export default Connect;

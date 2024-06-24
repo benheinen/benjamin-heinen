@@ -7,6 +7,7 @@ import {
   Heading,
   Grid,
   GridItem,
+  forwardRef,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
 
@@ -48,9 +49,9 @@ function ProjectsCard({ title, image, link }: Props) {
   );
 }
 
-export default function Projects() {
+const Projects = forwardRef((props, ref) => {
   return (
-    <VStack>
+    <VStack ref={ref} {...props}>
       <Grid
         templateAreas={{
           sm: `"heading"
@@ -93,4 +94,6 @@ export default function Projects() {
       </Grid>
     </VStack>
   );
-}
+});
+
+export default Projects;
