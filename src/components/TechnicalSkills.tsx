@@ -2,26 +2,14 @@ import {
   GridItem,
   Card,
   CardHeader,
-  CardBody,
   VStack,
   Grid,
   forwardRef,
+  UnorderedList,
+  ListItem,
+  Flex,
 } from "@chakra-ui/react";
 import CategoryHeading from "./CategoryHeading";
-interface Props {
-  title: string;
-  items: string;
-}
-
-// In the future, I might decide to export this component to seperate it from this file.
-function SkillCard({ title, items }: Props) {
-  return (
-    <Card w={300} borderRadius={"2xl"} bg={"gray.100"}>
-      <CardHeader fontWeight={"bold"}>{title}</CardHeader>
-      <CardBody>{items}</CardBody>
-    </Card>
-  );
-}
 
 const Skills = forwardRef((props, ref) => {
   return (
@@ -29,11 +17,11 @@ const Skills = forwardRef((props, ref) => {
       <Grid
         gridTemplateAreas={{
           lg: `"heading heading heading"
-        "card1 card2 card3"`,
+                "card1 card2 card3"`,
           base: `"heading"
-        "card1"
-        "card2"
-        "card3"`,
+                "card1"
+                "card2"
+                "card3"`,
         }}
         gap={5}
       >
@@ -41,25 +29,56 @@ const Skills = forwardRef((props, ref) => {
           <CategoryHeading
             title={"Technical Skills"}
             subtitle={"The technologies behind my projects"}
-          ></CategoryHeading>
+          />
         </GridItem>
         <GridItem area={"card1"}>
-          <SkillCard
-            title={"Languages"}
-            items={"C, HTML/CSS, Java, TypeScript, Python, SwiftUI"}
-          />
+          <Card w={300} borderRadius={"2xl"} bg={"gray.100"}>
+            <CardHeader fontWeight={"bold"}>Languages</CardHeader>
+            <Flex gap={10} marginInline={5} marginBottom={5}>
+              <UnorderedList>
+                <ListItem>C</ListItem>
+                <ListItem>Java</ListItem>
+                <ListItem>TypeScript</ListItem>
+              </UnorderedList>
+              <UnorderedList>
+                <ListItem>SwiftUI</ListItem>
+                <ListItem>HTML/CSS</ListItem>
+                <ListItem>Python</ListItem>
+              </UnorderedList>
+            </Flex>
+          </Card>
         </GridItem>
         <GridItem area={"card2"}>
-          <SkillCard
-            title={"Frameworks & Libraries"}
-            items={"React, ChakraUI, Node.js, NumPy, PyGame"}
-          />
+          <Card w={300} borderRadius={"2xl"} bg={"gray.100"}>
+            <CardHeader fontWeight={"bold"}>Frameworks & Libraries</CardHeader>
+            <Flex gap={10} marginInline={5} marginBottom={5}>
+              <UnorderedList>
+                <ListItem>React</ListItem>
+                <ListItem>Node.js</ListItem>
+                <ListItem>ChakraUI</ListItem>
+              </UnorderedList>
+              <UnorderedList>
+                <ListItem>NumPy</ListItem>
+                <ListItem>PyGame</ListItem>
+              </UnorderedList>
+            </Flex>
+          </Card>
         </GridItem>
         <GridItem area={"card3"}>
-          <SkillCard
-            title={"Tools"}
-            items={"MySQL, Git, Docker, Unix, Firebase"}
-          />
+          <Card w={300} borderRadius={"2xl"} bg={"gray.100"}>
+            <CardHeader fontWeight={"bold"}>Tools</CardHeader>
+            <Flex gap={10} marginInline={5} marginBottom={5}>
+              <UnorderedList>
+                <ListItem>MySQL</ListItem>
+                <ListItem>Git</ListItem>
+                <ListItem>Docker</ListItem>
+              </UnorderedList>
+              <UnorderedList>
+                <ListItem>Unix</ListItem>
+                <ListItem>Firebase</ListItem>
+              </UnorderedList>
+            </Flex>
+          </Card>
         </GridItem>
       </Grid>
     </VStack>
