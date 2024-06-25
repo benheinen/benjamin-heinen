@@ -42,10 +42,12 @@ export default function Navbar() {
       bgColor={navbar ? "white" : "gray.200"}
       as="nav"
       paddingBlock={5}
+      paddingInline={240}
       boxShadow={navbar ? "lg" : "none"}
-      pos={"sticky"}
+      pos={{ lg: "sticky" }}
       top={0}
       zIndex={10}
+      display={{ lg: "flex", md: "flex", base: "none" }}
     >
       <Grid
         templateAreas={{
@@ -54,8 +56,6 @@ export default function Navbar() {
           base: `"header header header header"
           "home about proj contact"`,
         }}
-        justifyContent={{ base: "center" }}
-        w={{ base: "100vh" }}
       >
         <GridItem area="icon" mr={5}>
           <Image
