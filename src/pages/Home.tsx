@@ -46,10 +46,10 @@ export default function Home() {
                 @ the University of Minnesota - Twin Cities
               </Text>
             </Text>
-            <HStack>
+            <HStack flexDir={{ lg: "column", base: "row" }}>
               <VStack>
                 <Button
-                  size={"lg"}
+                  size={{ base: "lg" }}
                   colorScheme={"orange"}
                   onClick={scrollToConnect}
                 >
