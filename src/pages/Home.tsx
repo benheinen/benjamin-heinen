@@ -36,14 +36,7 @@ export default function Home() {
     <Box bg="gray.200">
       <BackToTopButton></BackToTopButton>
       <VStack gap={190} paddingBottom={125}>
-        <Grid
-          paddingBlock={150}
-          templateAreas={{
-            lg: `"greeting"`,
-            sm: `"greeting"`,
-            xs: `"greeting"`,
-          }}
-        >
+        <Grid paddingBlock={150}>
           <GridItem id={"greeting"} area={"greeting"} w={"100%"}>
             <Heading size={"4xl"}>Hi, I'm Ben!</Heading>
             <Heading size={"lg"}>Aspiring Software Engineer</Heading>
