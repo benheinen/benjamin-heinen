@@ -17,6 +17,8 @@ import Connect from "../components/Connect";
 import BackToTopButton from "../components/BackToTopButton";
 import { useRef } from "react";
 
+import { analytics, logEvent } from "../firebase/firebase";
+
 export default function Home() {
   // Used for site navigation. Scroll between components.
   const aboutMeRef = useRef<null | HTMLDivElement>(null);
@@ -31,6 +33,8 @@ export default function Home() {
   const scrollToConnect = () => {
     connectRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  logEvent(analytics, "test");
 
   return (
     <Box bg="gray.200">

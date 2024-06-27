@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 const firebaseConfig = {
-  // eslint-disable-next-line no-undef
   apiKey: process.env.API_KEY,
   authDomain: "benjamin-heinen.firebaseapp.com",
   projectId: "benjamin-heinen",
@@ -17,4 +16,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-export {app, analytics}
+export {app, analytics, logEvent}
