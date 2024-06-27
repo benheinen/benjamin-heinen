@@ -10,6 +10,8 @@ import {
 import CategoryHeading from "./CategoryHeading";
 import { StarIcon } from "@chakra-ui/icons";
 
+import { analytics, logEvent } from "../firebase/firebase";
+
 const AboutMe = forwardRef((props, ref) => {
   return (
     <VStack ref={ref} {...props}>
@@ -67,7 +69,12 @@ const AboutMe = forwardRef((props, ref) => {
         </GridItem>
         <GridItem area={"resume"}>
           <a href="/resume.pdf" target={"_blank"}>
-            <Button leftIcon={<StarIcon />} w={300} colorScheme={"orange"}>
+            <Button
+              leftIcon={<StarIcon />}
+              w={300}
+              colorScheme={"orange"}
+              onClick={() => logEvent(analytics, "clicked_resume")}
+            >
               Resume
             </Button>
           </a>

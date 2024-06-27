@@ -1,6 +1,8 @@
 import { Box, Button, SlideFade } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
+import { analytics, logEvent } from "../firebase/firebase";
+
 export default function BackToTopButton() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -20,6 +22,7 @@ export default function BackToTopButton() {
       top: 0,
       behavior: "smooth",
     });
+    logEvent(analytics, "scroll_up");
   };
 
   return (

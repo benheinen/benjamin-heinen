@@ -28,13 +28,13 @@ export default function Home() {
 
   const scrollToAbout = () => {
     aboutMeRef.current?.scrollIntoView({ behavior: "smooth" });
+    logEvent(analytics, "clicked_about");
   };
 
   const scrollToConnect = () => {
     connectRef.current?.scrollIntoView({ behavior: "smooth" });
+    logEvent(analytics, "clicked_connect");
   };
-
-  logEvent(analytics, "test");
 
   return (
     <Box bg="gray.200">
